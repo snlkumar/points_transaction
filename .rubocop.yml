@@ -15,6 +15,7 @@ Style/Documentation:
   Enabled: false
 
 AllCops:
+  TargetRubyVersion: 3.2.5
   SuggestExtensions: false
   NewCops: enable
   Exclude:
@@ -24,3 +25,6 @@ AllCops:
     - 'config/initializers/*'
     - 'spec/**/*'
     - 'db/**/*'
+
+RSpec:
+  Enabled: false
