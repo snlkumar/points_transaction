@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This controller will store the users points transaction
 module Api
   module V1
@@ -9,14 +11,16 @@ module Api
         transaction_data = ExternalApiService.new.fetch_transaction(@transaction_params[:transaction_id])
         transaction = Transaction.new(@transaction_params.merge!(transaction_data: transaction_data))
         if transaction.save
-          render json: { status: 'success', "transaction_id": transaction.transaction_id}, status: :ok
+          render json: { status: 'success', transaction_id: transaction.transaction_id }, status: :ok
         else
           render json: { status: 'error', errors: transaction.errors.full_messages }, status: :unprocessable_entity
         end
       end
 
       def bulk_create
-        # I would prefer to process bulk_create operation through background job. Because of the required response i am processing it in line.
+        # I would prefer to process bulk_create operation through background job.
+        # Because of the required response i am processing it in line.
+
         transactions = @transaction_params.map do |transaction_params|
           transaction_data = ExternalApiService.new.fetch_transaction(transaction_params[:transaction_id])
           Transaction.new(transaction_params.merge!(transaction_data: transaction_data))

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/services/external_api_service_spec.rb
 
 require 'rails_helper'
@@ -5,13 +7,13 @@ require 'webmock/rspec'
 
 RSpec.describe ExternalApiService do
   before do
-    stub_request(:get, "https://jsonplaceholder.typicode.com/posts/1").
-      to_return(status: 200, body: "", headers: {})
+    stub_request(:get, 'https://jsonplaceholder.typicode.com/posts/1')
+      .to_return(status: 200, body: '', headers: {})
   end
 
-  describe "#fetch_transaction" do
-    context "when the response is successful" do
-      it "returns transaction data" do
+  describe '#fetch_transaction' do
+    context 'when the response is successful' do
+      it 'returns transaction data' do
         service = ExternalApiService.new
         transaction_id = '12345'
         result = service.fetch_transaction(transaction_id)
@@ -23,21 +25,21 @@ RSpec.describe ExternalApiService do
       end
     end
 
-    context "when the response is not successful" do
+    context 'when the response is not successful' do
       before do
-        stub_request(:get, "https://jsonplaceholder.typicode.com/posts/1").
-          to_return(status: 500, body: "", headers: {})
+        stub_request(:get, 'https://jsonplaceholder.typicode.com/posts/1')
+          .to_return(status: 500, body: '', headers: {})
       end
 
-      it "raises an error" do
+      it 'raises an error' do
         service = ExternalApiService.new
-        expect { service.fetch_transaction('12345') }.to raise_error("Error fetching data: ")
+        expect { service.fetch_transaction('12345') }.to raise_error('Error fetching data: ')
       end
     end
   end
 
-  describe "#random_datetime" do
-    it "returns a datetime within the expected range" do
+  describe '#random_datetime' do
+    it 'returns a datetime within the expected range' do
       service = ExternalApiService.new
       from = 10.months.ago
       to = Time.now
