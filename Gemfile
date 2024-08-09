@@ -2,7 +2,8 @@
 
 source 'https://rubygems.org'
 
-ruby '3.0.6'
+# ruby '3.0.6'
+ruby '3.2.5'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
@@ -13,10 +14,10 @@ gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
 gem 'httparty'
 gem 'pg', '~> 1.1'
+
 # lint gems
 gem 'brakeman'
 gem 'bundler-audit'
-gem 'rubocop'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
@@ -56,6 +57,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'rubocop', '~> 1.65', require: false
+  gem 'rubocop-rspec', require: false
   gem 'webmock'
 end
 

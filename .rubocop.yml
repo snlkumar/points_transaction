@@ -11,16 +11,25 @@ Metrics/BlockLength:
 
 Layout/LineLength:
   Max: 120
+  
 Style/Documentation:
   Enabled: false
 
+Style/HashSyntax:
+  Exclude:
+    - 'app/controllers/api/v1/transactions_controller.rb'
+    - 'app/services/external_api_service.rb'
+
 AllCops:
+  TargetRubyVersion: 3.2
   SuggestExtensions: false
   NewCops: enable
   Exclude:
+    - 'vendor/**/*'
     - 'db/schema.rb'
     - 'bin/*'
     - 'config/environments/*'
     - 'config/initializers/*'
     - 'spec/**/*'
     - 'db/**/*'
+
