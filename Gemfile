@@ -13,6 +13,7 @@ gem 'sprockets-rails'
 # Use postgresql as the database for Active Record
 gem 'httparty'
 gem 'pg', '~> 1.1'
+
 # lint gems
 gem 'brakeman'
 gem 'bundler-audit'
