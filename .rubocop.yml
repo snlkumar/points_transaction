@@ -26,5 +26,3 @@ AllCops:
     - 'spec/**/*'
     - 'db/**/*'
 
-RSpec:
-  Enabled: false

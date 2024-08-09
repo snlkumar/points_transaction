@@ -260,6 +260,8 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.0)
       parser (>= 3.3.1.0)
+    rubocop-rspec (3.0.4)
+      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   redis (>= 4.0.1)
   rspec-rails
   rubocop
+  rubocop-rspec
   sprockets-rails
   stimulus-rails
   turbo-rails

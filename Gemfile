@@ -18,7 +18,6 @@ gem 'pg', '~> 1.1'
 # lint gems
 gem 'brakeman'
 gem 'bundler-audit'
-gem 'rubocop'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '>= 5.0'
 
@@ -59,6 +58,8 @@ group :development, :test do
   gem 'faker'
   gem 'rspec-rails'
   gem 'webmock'
+  gem 'rubocop'
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
