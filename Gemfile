@@ -57,9 +57,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
-  gem 'webmock'
   gem 'rubocop'
   gem 'rubocop-rspec', require: false
+  gem 'webmock'
 end
 
 group :development do
