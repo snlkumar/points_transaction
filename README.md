@@ -3,7 +3,7 @@
 Ruby version: '3.2.5'
 Rails version: '7.1.3.4'
 
-Run the repo on local
+Steps to setup the code on local
 * Make sure required ruby and rails version installed on local machine
 * clone the repo
 * bundle install
@@ -61,6 +61,14 @@ curl --location --request POST 'http://localhost:3000/api/v1/transactions/bulk' 
 }'
 
 ```
+CI/CD: CI has been configured with github actions
+Following checks have been added.
+1. test cases must be passed
+2. Security audit of gems.
+3. Security audit of application code.
+4. Rubocop
 
-Note: I have not added any model level validations and association because it was not mentioned in the assingment. I am processing bulk transaction inline but i would prefer using background process. I have not implemented backgroud job because it was not mentioned in the assignment and the response message would be different.
+Note: 
+I have not added any model level validations and association because it was not mentioned in the assingment. 
+I am processing bulk transaction inline but i would prefer using background process. I have not implemented backgroud job because it was not mentioned in the assignment and the response message would be different.
 
